@@ -28,7 +28,7 @@
 
     <a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
     <ul>
-        <li ><a href="../views/Common/index.jsp"><i class="icon icon-home"></i> <span>Home</span></a> </li>
+        <li ><a href="../views/Common/contentdemo.jsp"><i class="icon icon-home"></i> <span>Home</span></a> </li>
         <li> <a href="<c:url value="/task" />"><i class="icon icon-inbox"></i> <span>Task</span></a> </li>
         <li> <a href="<c:url value="/user" />"><i class="icon icon-inbox"></i> <span>User</span></a> </li>
         <li> <a href="<c:url value="/team" />"><i class="icon icon-inbox"></i> <span>Team</span></a> </li>
