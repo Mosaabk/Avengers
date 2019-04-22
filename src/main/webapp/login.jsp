@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 
 <head>
     <title>TaskList</title><meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
-    <link rel="stylesheet" href="css/matrix-login.css" />
+    <link rel="stylesheet" href="res/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="res/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="res/css/matrix-login.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
 <div id="loginbox">
-    <form id="loginform" class="form-vertical" action="index.html">
-        <div class="control-group normal_text"> <h3><img src="img/logo.png" alt="Logo" /></h3></div>
+    <form id="loginform" class="form-vertical" action="index.jsp">
+        <div class="control-group normal_text"> <h3><img src="res/img/logo.png" alt="Logo" /></h3></div>
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">
@@ -31,7 +31,7 @@
         <div class="form-actions">
             <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Lost password?</a></span>
             <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-register">register</a></span>
-            <span class="pull-right"><a type="submit" href="index.html" class="btn btn-success" /> Login</a></span>
+            <span class="pull-right"><a type="submit" href="index.jsp" class="btn btn-success" /> Login</a></span>
         </div>
     </form>
     <form id="recoverform" action="#" class="form-vertical">
@@ -68,8 +68,8 @@
     </form>
 </div>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/matrix.login.js"></script>
+<script src="res/js/jquery.min.js"></script>
+<script src="res/js/matrix.login.js"></script>
 </body>
 
 </html>

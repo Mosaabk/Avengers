@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <title>Matrix Admin</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
-    <link rel="stylesheet" href="css/colorpicker.css" />
-    <link rel="stylesheet" href="css/datepicker.css" />
-    <link rel="stylesheet" href="css/uniform.css" />
-    <link rel="stylesheet" href="css/select2.css" />
-    <link rel="stylesheet" href="css/matrix-style.css" />
-    <link rel="stylesheet" href="css/matrix-media.css" />
-    <link rel="stylesheet" href="css/bootstrap-wysihtml5.css" />
+    <link rel="stylesheet" href="res/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="res/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="res/css/colorpicker.css" />
+    <link rel="stylesheet" href="res/css/datepicker.css" />
+    <link rel="stylesheet" href="res/css/uniform.css" />
+    <link rel="stylesheet" href="res/css/select2.css" />
+    <link rel="stylesheet" href="res/css/matrix-style.css" />
+    <link rel="stylesheet" href="res/css/matrix-media.css" />
+    <link rel="stylesheet" href="res/css/bootstrap-wysihtml5.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-    <script src="js/setting.js"></script>
+    <script src="res/js/setting.js"></script>
 </head>
 <body>
 
@@ -28,7 +28,7 @@
 <!--<div id="user-nav" class="navbar navbar-inverse">-->
 <!--    <ul class="nav">-->
 <!--        <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>-->
-<!--        <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>-->
+<!--        <li class=""><a title="" href="login.jsp"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>-->
 <!--    </ul>-->
 <!--</div>-->
 
@@ -38,10 +38,10 @@
 
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
     <ul>
-        <li ><a href="index.html"><i class="icon icon-home"></i> <span>Home</span></a> </li>
-        <li> <a href="newTask.html"><i class="icon icon-signal"></i> <span>New Task</span></a> </li>
-        <li class="active"> <a href="setting.html"><i class="icon icon-inbox"></i> <span>Setting</span></a> </li>
-        <li><a href="login.html"><i class="icon icon-th"></i> <span>Log out</span></a></li>
+        <li ><a href="index.jsp"><i class="icon icon-home"></i> <span>Home</span></a> </li>
+        <li> <a href="newTask.jsp"><i class="icon icon-signal"></i> <span>New Task</span></a> </li>
+        <li class="active"> <a href="setting.jsp"><i class="icon icon-inbox"></i> <span>Setting</span></a> </li>
+        <li><a href="login.jsp"><i class="icon icon-th"></i> <span>Log out</span></a></li>
     </ul>
 </div>
 
@@ -50,7 +50,7 @@
 
 <div id="content">
     <div id="content-header">
-        <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Form elements</a> <a href="#" class="current">Common elements</a> </div>
+        <div id="breadcrumb"> <a href="index.jsp" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Form elements</a> <a href="#" class="current">Common elements</a> </div>
         <h1>Common Form Elements</h1>
     </div>
     <div class="container-fluid">
@@ -123,16 +123,16 @@
         </div>
     </div>
 </div>
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.ui.custom.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-colorpicker.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
-<script src="js/masked.js"></script>
-<script src="js/jquery.uniform.js"></script>
-<script src="js/select2.min.js"></script>
-<script src="js/matrix.js"></script>
-<script src="js/matrix.form_common.js"></script>
+<script src="res/js/jquery.min.js"></script>
+<script src="res/js/jquery.ui.custom.js"></script>
+<script src="res/js/bootstrap.min.js"></script>
+<script src="res/js/bootstrap-colorpicker.js"></script>
+<script src="res/js/bootstrap-datepicker.js"></script>
+<script src="res/js/masked.js"></script>
+<script src="res/js/jquery.uniform.js"></script>
+<script src="res/js/select2.min.js"></script>
+<script src="res/js/matrix.js"></script>
+<script src="res/js/matrix.form_common.js"></script>
 
 <script>
     $('.textarea_editor').wysihtml5();
