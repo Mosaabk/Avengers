@@ -39,9 +39,9 @@
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
     <ul>
         <li ><a href="index.jsp"><i class="icon icon-home"></i> <span>Home</span></a> </li>
-        <li> <a href="newTask.jsp"><i class="icon icon-signal"></i> <span>New Task</span></a> </li>
+        <li> <a href="WEB-INF/views/Task/newTask.jsp"><i class="icon icon-signal"></i> <span>New Task</span></a> </li>
         <li class="active"> <a href="setting.jsp"><i class="icon icon-inbox"></i> <span>Setting</span></a> </li>
-        <li><a href="login.jsp"><i class="icon icon-th"></i> <span>Log out</span></a></li>
+        <li><a href="WEB-INF/views/Login/login.jsp"><i class="icon icon-th"></i> <span>Log out</span></a></li>
     </ul>
 </div>
 
