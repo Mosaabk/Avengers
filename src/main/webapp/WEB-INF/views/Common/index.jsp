@@ -4,12 +4,12 @@
     <title>Matrix Admin</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="res/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="res/css/bootstrap-responsive.min.css"/>
-    <link rel="stylesheet" href="res/css/fullcalendar.css"/>
-    <link rel="stylesheet" href="res/css/matrix-style.css"/>
-    <link rel="stylesheet" href="res/css/matrix-media.css"/>
-    <link rel="stylesheet" href="res/css/jquery.gritter.css"/>
+    <link rel="stylesheet" href="../../res/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../res/css/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="../../res/css/fullcalendar.css"/>
+    <link rel="stylesheet" href="../../res/css/matrix-style.css"/>
+    <link rel="stylesheet" href="../../res/css/matrix-media.css"/>
+    <link rel="stylesheet" href="../../res/css/jquery.gritter.css"/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
@@ -31,9 +31,9 @@
     <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
     <ul>
         <li class="active"><a href="index.jsp"><i class="icon icon-home"></i> <span>Home</span></a></li>
-        <li><a href="WEB-INF/views/Task/newTask.jsp"><i class="icon icon-signal"></i> <span>New Task</span></a></li>
+        <li><a href="../Task/newTask.jsp"><i class="icon icon-signal"></i> <span>New Task</span></a></li>
         <li><a href="setting.jsp"><i class="icon icon-inbox"></i> <span>Setting</span></a></li>
-        <li><a href="WEB-INF/views/Login/login.jsp"><i class="icon icon-th"></i> <span>Log out</span></a></li>
+        <li><a href="../Login/login.jsp"><i class="icon icon-th"></i> <span>Log out</span></a></li>
     </ul>
 </div>
 
@@ -79,14 +79,14 @@
                     <div id="group_icon1" class="icon_user">
                         <button id="close" class="btn btn-info">close</button>
                         <button id="repay" class="btn btn-info" data-toggle="modal" data-target="#repay_text">Reply</button>
-                        <img class="add_people" src="res/img/add_icon.png" alt="" style="background-color: green"
+                        <img class="add_people" src="../../res/img/add_icon.png" alt="" style="background-color: green"
                              data-toggle="modal" data-target="#myModal"/>
-                        <img src="res/img/0.jpeg" alt=""/>
-                        <img src="res/img/0.jpeg" alt=""/>
-                        <img src="res/img/0.jpeg" alt=""/>
-                        <img src="res/img/0.jpeg" alt=""/>
-                        <img src="res/img/0.jpeg" alt=""/>
-                        <img src="res/img/0.jpeg" alt=""/>
+                        <img src="../../res/img/0.jpeg" alt=""/>
+                        <img src="../../res/img/0.jpeg" alt=""/>
+                        <img src="../../res/img/0.jpeg" alt=""/>
+                        <img src="../../res/img/0.jpeg" alt=""/>
+                        <img src="../../res/img/0.jpeg" alt=""/>
+                        <img src="../../res/img/0.jpeg" alt=""/>
                     </div>
                     <div class="discuss-title"><a data-toggle="collapse" href="#discuss1">
                         <h5>discuss</h5>
@@ -94,7 +94,7 @@
                     </div>
                     <div id="discuss1" class="collapse in">
                         <div id="discuss_icon1" class="discuss_user">
-                            <img src="res/img/0.jpeg"/>
+                            <img src="../../res/img/0.jpeg"/>
                         </div>
                         <div class="widget-content"> This box is opened by default,
                             paragraphs and is full of waffle to pad out the comment. Usually,
@@ -114,19 +114,19 @@
                         paragraphs and is full of waffle to pad out the comment. Usually,
                         you just wish these sorts of comments would come to an end.
                         <div id="group_icon2" class="icon_user">
-                            <img src="res/img/0.jpeg" alt=""/>
-                            <img src="res/img/0.jpeg" alt=""/>
-                            <img src="res/img/0.jpeg" alt=""/>
-                            <img src="res/img/0.jpeg" alt=""/>
-                            <img src="res/img/0.jpeg" alt=""/>
-                            <img src="res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
                         </div>
                         <div class="discuss-title"><a data-toggle="collapse" href="#discuss2">
                             <h5>discuss</h5>
                         </a></div>
                         <div id="discuss2" class="collapse in">
                             <div id="discuss_icon2" class="discuss_user">
-                                <img src="res/img/0.jpeg"/>
+                                <img src="../../res/img/0.jpeg"/>
                             </div>
                             <div class="widget-content"> This box is opened by default,
                                 paragraphs and is full of waffle to pad out the comment. Usually,
@@ -144,19 +144,19 @@
                         paragraphs and is full of waffle to pad out the comment. Usually,
                         you just wish these sorts of comments would come to an end.
                         <div id="group_icon3" class="icon_user">
-                            <img src="res/img/0.jpeg" alt=""/>
-                            <img src="res/img/0.jpeg" alt=""/>
-                            <img src="res/img/0.jpeg" alt=""/>
-                            <img src="res/img/0.jpeg" alt=""/>
-                            <img src="res/img/0.jpeg" alt=""/>
-                            <img src="res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
+                            <img src="../../res/img/0.jpeg" alt=""/>
                         </div>
                         <div class="discuss-title"><a data-toggle="collapse" href="#discuss3">
                             <h5>discuss</h5>
                         </a></div>
                         <div id="discuss3" class="collapse in">
                             <div id="discuss_icon3" class="discuss_user">
-                                <img src="res/img/0.jpeg"/>
+                                <img src="../../res/img/0.jpeg"/>
                             </div>
                             <div class="widget-content"> This box is opened by default,
                                 paragraphs and is full of waffle to pad out the comment. Usually,
@@ -238,10 +238,10 @@
             </div>
         </div>
 
-    <script src="res/js/jquery.min.js"></script>
-    <script src="res/js/jquery.ui.custom.js"></script>
-    <script src="res/js/bootstrap.min.js"></script>
-    <script src="res/js/index.js"></script>
+    <script src="../../res/js/jquery.min.js"></script>
+    <script src="../../res/js/jquery.ui.custom.js"></script>
+    <script src="../../res/js/bootstrap.min.js"></script>
+    <script src="../../res/js/index.js"></script>
 
 </body>
 </html>
