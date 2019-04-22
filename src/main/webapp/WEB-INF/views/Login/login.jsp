@@ -12,7 +12,7 @@
 </head>
 <body>
 <div id="loginbox">
-    <form id="loginform" class="form-vertical" action="../Common/index.jsp">
+    <form id="loginform" class="form-vertical" action="../Common/contentdemo.jsp">
         <div class="control-group normal_text"> <h3><img src="res/img/logo.png" alt="Logo" /></h3></div>
         <div class="control-group">
             <div class="controls">
@@ -31,7 +31,7 @@
         <div class="form-actions">
             <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Lost password?</a></span>
             <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-register">register</a></span>
-            <span class="pull-right"><a type="submit" href="../Common/index.jsp" class="btn btn-success" /> Login</a></span>
+            <span class="pull-right"><a type="submit" href="../Common/contentdemo.jsp" class="btn btn-success" /> Login</a></span>
         </div>
     </form>
     <form id="recoverform" action="#" class="form-vertical">

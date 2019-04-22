@@ -38,7 +38,7 @@
 
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
     <ul>
-        <li ><a href="index.jsp"><i class="icon icon-home"></i> <span>Home</span></a> </li>
+        <li ><a href="contentdemo.jsp"><i class="icon icon-home"></i> <span>Home</span></a> </li>
         <li> <a href="../Task/newTask.jsp"><i class="icon icon-signal"></i> <span>New Task</span></a> </li>
         <li class="active"> <a href="setting.jsp"><i class="icon icon-inbox"></i> <span>Setting</span></a> </li>
         <li><a href="../Login/login.jsp"><i class="icon icon-th"></i> <span>Log out</span></a></li>
@@ -50,7 +50,7 @@
 
 <div id="content">
     <div id="content-header">
-        <div id="breadcrumb"> <a href="index.jsp" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Form elements</a> <a href="#" class="current">Common elements</a> </div>
+        <div id="breadcrumb"> <a href="contentdemo.jsp" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Form elements</a> <a href="#" class="current">Common elements</a> </div>
         <h1>Common Form Elements</h1>
     </div>
     <div class="container-fluid">
