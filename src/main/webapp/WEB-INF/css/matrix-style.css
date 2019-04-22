@@ -1353,6 +1353,7 @@ div.dataTables_wrapper .ui-widget-header {
 	height:30px;
 	margin-left: 2px;
 	border-radius:50%;
+
 }
 
 .discuss_user{
@@ -1367,4 +1368,14 @@ div.dataTables_wrapper .ui-widget-header {
 	width: 50px;
 	height:50px;
 	border-radius:50%;
+}
+
+.add_people{
+
+}
+.input-group{
+	width: 100%;
+}
+.pass_bg{
+	background-color:rgba(255,0,0,0.1);
 }
