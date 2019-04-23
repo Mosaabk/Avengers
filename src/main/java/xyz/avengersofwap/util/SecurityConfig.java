@@ -25,6 +25,8 @@ public class SecurityConfig {
         urlPatterns1.add("/home");
         urlPatterns1.add("/Welcome");
         urlPatterns1.add("/");
+        urlPatterns1.add("/user");
+        urlPatterns1.add("/team");
 
         mapConfig.put(ROLE_EMPLOYEE, urlPatterns1);
 
