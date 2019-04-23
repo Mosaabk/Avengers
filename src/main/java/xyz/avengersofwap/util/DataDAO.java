@@ -62,7 +62,7 @@ public class DataDAO {
         try {
             Class.forName(DB_DRIVER);
         } catch (ClassNotFoundException e) {
-            System.out.println("Class Name " + e.getMessage());
+            System.out.println("Class Name error " + e.getMessage());
         }
         try {
             dbConnection = DriverManager.getConnection(DB_CONNECTION, DB_USER,
