@@ -10,10 +10,11 @@
 
 
 <t:genericpage>
-    <jsp:attribute name="sidebar">
-
+    <jsp:attribute name="preload">
     </jsp:attribute>
-    <jsp:body>
-        <p>Hi I'm the heart of the message</p>
-    </jsp:body>
+    <jsp:attribute name="main-wrapper">
+        <jsp:body>
+            <p>Hi I'm the heart of the message</p>
+        </jsp:body>
+    </jsp:attribute>
 </t:genericpage>
