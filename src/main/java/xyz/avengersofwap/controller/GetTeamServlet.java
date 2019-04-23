@@ -19,15 +19,22 @@ public class GetTeamServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int teamId = Integer.valueOf(request.getParameter("teamId"));
-        Team team = TeamUtil.teamWithId(teamId);
-        Gson gson = new Gson();
-        String teamJson = gson.toJson(team);
-        PrintWriter out = response.getWriter();
-        try {
-            out.println(teamJson);
-        } catch (Exception e) {
-            out.println(e.getLocalizedMessage());
+        System.out.println("Request /getTeam");
+//        int teamId = Integer.valueOf(request.getParameter("teamId"));
+//        Team team = TeamUtil.teamWithId(teamId);
+//        Gson gson = new Gson();
+//        String teamJson = gson.toJson(team);
+//        PrintWriter out = response.getWriter();
+//        try {
+//            out.println(teamJson);
+//        } catch (Exception e) {
+//            out.println(e.getLocalizedMessage());
+//        }
+        String path = "WEB-INF/views/Team/teaminfo.jsp";
+        String param = request.getParameter("teamId");
+        if (!param.isEmpty()) {
+            path += "?teamId=" + param;
         }
+        response.sendRedirect("/teamInfo");
     }
 }

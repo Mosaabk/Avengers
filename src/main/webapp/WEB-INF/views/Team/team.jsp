@@ -19,6 +19,7 @@
 </head>
 <body>
 <%--<jsp:include page="../Common/preload.jsp"></jsp:include>--%>
+
 <div id="main-wrapper">
     <jsp:include page="../Common/topbar.jsp"></jsp:include>
     <jsp:include page="../Common/sidebar.jsp"></jsp:include>
@@ -37,13 +38,16 @@
                         <div class="p-2">
                             <img src="<c:url value="/res/img/users/1.jpg" />" alt="team-avatar" width="50" class="rounded-circle">
                         </div>
-                        <div class="comment-text w-100">
+                        <div class="comment-text w-100" data-defaultValue="${team.id}">
                             <h6 class="font-medium">${team.name}</h6>
                             <span class="m-b-15 d-block">${team.description}</span>
                             <div class="comment-footer">
                                 <span class="text-muted float-right"> </span>
-                                <button type="button" class="btn btn-cyan btn-sm editBtn">Edit</button>
-                                <button type="button" class="btn btn-danger btn-sm delBtn">Delete</button>
+                                <form action="<c:url value="/teamInfo" />" method="get">
+                                    <input type="hidden" name="teamId" value="${team.id}" />
+                                    <input type="submit" id="edit${team.id}" type="button" class="btn btn-cyan btn-sm editBtn" value="Edit" />
+                                    <input type="submit" id="del${team.id}" type="button" class="btn btn-danger btn-sm delBtn" value="Delete">
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -61,9 +65,7 @@
 <script src="<c:url value="/res/dist/js/waves.js" />"></script>
 <script src="<c:url value="/res/dist/js/sidebarmenu.js" />"></script>
 <script src="<c:url value="/res/dist/js/custom.min.js" />"></script>
-<script>
 
-</script>
 <script src="<c:url value="/res/js/team/team.js"/> "></script>
 </body>
 </html>
