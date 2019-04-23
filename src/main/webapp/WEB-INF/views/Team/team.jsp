@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <t:genericpage>
@@ -14,6 +15,12 @@
 
     </jsp:attribute>
     <jsp:body>
-        <p>Hi I'm the heart of the message</p>
+        <div class="card">
+            <ul>
+                <c:forEach var="team" items="${teamList}" >
+                    <li>${team.name}</li>
+                </c:forEach>
+            </ul>
+        </div>
     </jsp:body>
 </t:genericpage>
