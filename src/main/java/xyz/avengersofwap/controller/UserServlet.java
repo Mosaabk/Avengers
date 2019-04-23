@@ -1,5 +1,7 @@
 package xyz.avengersofwap.controller;
 
+import xyz.avengersofwap.util.TeamUtil;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,7 @@ public class UserServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("userList", TeamUtil.getAllUser());
         request.getRequestDispatcher("WEB-INF/views/User/user.jsp").forward(request, response);
     }
 }

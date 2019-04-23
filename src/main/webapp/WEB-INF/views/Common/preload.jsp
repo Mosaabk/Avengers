@@ -37,5 +37,7 @@
 <script src="<c:url value="/res/dist/js/sidebarmenu.js" />"></script>
 <!--Custom JavaScript -->
 <script src="<c:url value="/res/dist/js/custom.min.js" />"></script>
+
+<script src="<c:url value="/res/dist/js/pages/DataTables/datatables.min.js" />"></script>
 </body>
 </html>

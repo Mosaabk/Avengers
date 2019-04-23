@@ -12,9 +12,6 @@
 
 <t:genericpage>
 
-    <jsp:attribute name="sidebar">
-
-    </jsp:attribute>
     <jsp:body>
         <div class="card">
             <div class="card-body">
