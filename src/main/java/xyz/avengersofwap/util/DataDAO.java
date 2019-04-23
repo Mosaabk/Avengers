@@ -10,7 +10,7 @@ import java.util.Map;
 public class DataDAO {
 
     private static final String DB_DRIVER = "org.h2.Driver";
-    private static final String DB_CONNECTION = "jdbc:h2:/Users/Mosaabk/Documents/Avengers/database/avengers";
+    private static final String DB_CONNECTION = "jdbc:h2:~/avengers";
     private static final String DB_USER = "";
     private static final String DB_PASSWORD = "";
 
