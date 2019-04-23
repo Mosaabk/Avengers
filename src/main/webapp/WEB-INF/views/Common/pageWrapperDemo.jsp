@@ -11,10 +11,10 @@
 <head>
 </head>
 <body>
-    <jsp:include page="preload.jsp"></jsp:include>
+    <jsp:include page="preload.jsp"/>
     <div id="main-wrapper">
-        <jsp:include page="topbar.jsp"></jsp:include>
-        <jsp:include page="sidebar.jsp"></jsp:include>
+        <jsp:include page="topbar.jsp"/>
+        <jsp:include page="sidebar.jsp"/>
 
         <div class="page-wrapper">
             <h1>Hello World</h1>
