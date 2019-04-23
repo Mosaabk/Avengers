@@ -1,16 +1,17 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
+<html>
 
 <head>
-    <title>TaskList</title><meta charset="UTF-8" />
+    <title>TaskList</title>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link type="text/css" rel="stylesheet" href="../../../res/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="../../../res/css/bootstrap-responsive.min.css" />
-    <link rel="stylesheet" href="../../../res/css/matrix-login.css" />
+    <link type="text/css" rel="stylesheet" href="../../../res/css/matrix-login.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
+
 
 <p>${errorMsg}</p>
 <div id="loginbox">
@@ -48,7 +49,7 @@
 
         <div class="form-actions">
             <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login">&laquo; Back to login</a></span>
-            <span class="pull-right"><a class="btn btn-info"/>Reecover</a></span>
+            <span class="pull-right"><a class="btn btn-info">Reecover</a></span>
         </div>
     </form>
 
@@ -66,7 +67,7 @@
 
         <div class="form-actions">
             <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="back-login">&laquo; Back to login</a></span>
-            <span class="pull-right"><a class="btn btn-info"/>Reecover</a></span>
+            <span class="pull-right"><a class="btn btn-info">Reecover</a></span>
         </div>
     </form>
 </div>

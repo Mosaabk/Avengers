@@ -10,7 +10,7 @@ import java.util.Map;
 public class DataDAO {
 
     private static final String DB_DRIVER = "org.h2.Driver";
-    private static final String DB_CONNECTION = "jdbc:h2:/Users/Mosaabk/Documents/Avengers/src/database/avengers";
+    private static final String DB_CONNECTION = "jdbc:h2:/Users/Mosaabk/Documents/Avengers/database/avengers";
     private static final String DB_USER = "";
     private static final String DB_PASSWORD = "";
 
@@ -25,6 +25,7 @@ public class DataDAO {
         User user = new User();
 
         String SelectQuery = "SELECT * from User where email=?  AND password=?";
+
         try {
             selectPreparedStatement = connection.prepareStatement(SelectQuery);
             selectPreparedStatement.setString(1, userName);
@@ -32,10 +33,11 @@ public class DataDAO {
             ResultSet res = selectPreparedStatement.executeQuery();
 
             while (res.next()){
-
                 int id  = res.getInt("id");
                 String name = res.getString("name");
                 String phone = res.getString("phone");
+
+
                 return new User(userName, password, User.GENDER_MALE,
                         SecurityConfig.ROLE_EMPLOYEE);
 

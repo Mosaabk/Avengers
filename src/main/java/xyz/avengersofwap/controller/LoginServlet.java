@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
 
         User user = DataDAO.findUser(userName, password);
 
-        if(user == null){
+        if(user == null && !request.getRequestURI().contains("res")){
             String errorMsg= "Invalid Username or Password";
             request.setAttribute("errorMsg", errorMsg);
 
@@ -45,7 +45,7 @@ public class LoginServlet extends HttpServlet {
         if(requestUri != null){
             response.sendRedirect(requestUri);
         } else {
-            response.sendRedirect(request.getContextPath() + "/task");
+            response.sendRedirect(request.getContextPath() + "/Welcome");
         }
 
     }
