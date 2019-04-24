@@ -111,7 +111,6 @@ $(document).ready(function () {
                 window.location.href = "http://localhost:8080/userinfo?userid=" + userId;
             },
             error: function (err) {
-
                 window.location.href = "http://localhost:8080/userinfo?userid=" + userId;
             }
         });
