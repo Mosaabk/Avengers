@@ -17,7 +17,6 @@ public class DataDAO {
     private static final String DB_USER = "";
     private static final String DB_PASSWORD = "";
 
-
     // Find a User by userName and password.
     public static User findUser(String userName, String password) {
         System.out.println(userName);

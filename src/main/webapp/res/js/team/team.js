@@ -1,7 +1,12 @@
 
-$(document).ready(function () {
-    //$('.editBtn').click(editBtnClick);
-});
+// $(document).ready(function () {
+//     // $('#createTeam').click(clickCreateTeam);
+// });
+
+function clickCreateTeam() {
+    console.log('click create team external js');
+    setTimeout(function(){document.location.href = "/teamInfo"},50);
+}
 
 function editBtnClick(event) {
     console.log('click edit');
