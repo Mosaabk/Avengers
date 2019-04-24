@@ -17,7 +17,7 @@
         <jsp:include page="sidebar.jsp"/>
 
         <div class="page-wrapper">
-            <h1>Hello World</h1>
+            <h1>This is Avengers Project</h1>
         </div>
     </div>
 </body>
