@@ -19,6 +19,7 @@ public class TeamServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Team> teamList = TeamUtil.getAllTeams();
+        System.out.println("teams count: " + teamList.size());
         request.setAttribute("teamList", teamList);
         request.getRequestDispatcher("WEB-INF/views/Team/team.jsp").forward(request, response);
     }

@@ -29,12 +29,12 @@
             <div class="card-body p-b-0">
                 <div class="d-flex flex-row justify-content-between card-title m-b-0">
                     <h4>Teams</h4>
-                    <button type="button" class="float-right btn btn-default btn-sm">New Team</button>
+                    <button id="createTeam" type="button" class="float-right btn btn-default btn-sm">New Team</button>
                 </div>
             </div>
             <div class="comment-widgets scrollable">
                 <c:forEach var="team" items="${teamList}" >
-                    <div class="d-flex flex-row comment-row">
+                    <div id="team${team.id}" class="d-flex flex-row comment-row">
                         <div class="p-2">
                             <img src="<c:url value="/res/img/users/1.jpg" />" alt="team-avatar" width="50" class="rounded-circle">
                         </div>
@@ -46,7 +46,7 @@
                                 <form action="<c:url value="/teamInfo" />" method="get">
                                     <input type="hidden" name="teamId" value="${team.id}" />
                                     <input type="submit" id="edit${team.id}" type="button" class="btn btn-cyan btn-sm editBtn" value="Edit" />
-                                    <input type="submit" id="del${team.id}" type="button" class="btn btn-danger btn-sm delBtn" value="Delete">
+                                    <button id="del${team.id}" type="button" class="btn btn-danger btn-sm delBtn">Delete</button>
                                 </form>
                             </div>
                         </div>
@@ -67,6 +67,45 @@
 <script src="<c:url value="/res/dist/js/custom.min.js" />"></script>
 
 <script src="<c:url value="/res/js/team/team.js"/> "></script>
+<script>
+    $(document).click(function () {
+        $('#createTeam').click(function () {
+            console.log('click create team');
+            setTimeout(function(){document.location.href = "/teamInfo?teamId=-1"},10);
+        });
+        $('.delBtn').click(clickDeleteBtn);
+    });
+
+    function editBtnClick(event) {
+        console.log('click edit');
+        const btnId = $(this).attr('id');
+        const teamId = btnId.substring(4);
+        console.log(teamId);
+        // $.get( "/getTeam", { teamId: teamId } );
+        sessionStorage.setItem("teamId", teamId);
+        //location.href("/teamInfo");
+    }
+
+    function clickDeleteBtn(event) {
+        console.log('click delete');
+        const btnId = $(this).attr('id');
+        const teamId = btnId.substring(3);
+        const teamRow = $('#team' + teamId);
+        console.log(teamId);
+        sessionStorage.setItem("teamId", teamId);
+        const data = {
+            'teamId': teamId
+        };
+        $.ajax({
+            url: '/deleteTeam',
+            type: 'GET',
+            data: data,
+            success: function (response) {
+                teamRow.empty();
+            }
+        });
+    }
+</script>
 </body>
 </html>
 
