@@ -1,28 +1,36 @@
 $(document).ready(function () {
     $('#user_table').DataTable();
 
-    $("#role_btn").dblclick(function(){
-        $(this).hide();
+    $('.add_new_role').click(function () {
+
+    })
+
+
+    $(".deletebtn").click(function(){
+        const view = $(this);
+        let userID=view.attr("data-value");
+        let index=view.attr("data-defaultValue");
+        $("#tr"+index).empty();
     });
+    $(".role_btn").click(function(){
+        const view  = $(this);
+        let rolsId = view.attr("data-value");
+        let index=view.attr("data-defaultValue");
+
+        view.remove();
+
+    });
+
+
+
+    $("#select_role_save").click(function () {
+        var options=$("#select_role option:selected");
+
+    });
+
 
 });
 
-
-function add_roles(){
-
-}
-
-function new_user(){
-
-}
-
-
-function deleteItem(obj){
-    //add ajax if success doing this else nothing happen
-    obj.parentNode.parentNode.parentNode.removeChild(obj.parentNode.parentNode);
-
-}
-
-function remove_role(obj){
-    obj.parentNode.removeChild(obj);
+function deleteItme(id,trLayout){
+   console.log(id +"------------"+trLayout);
 }

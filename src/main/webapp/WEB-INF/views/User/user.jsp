@@ -11,7 +11,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="<c:url value="/res/css/select2.css"/>">
+        <link rel="stylesheet" href="<c:url value="/res/css/select2.min.css"/>">
     </head>
     <body>
     <jsp:include page="../Common/preload.jsp"></jsp:include>
@@ -34,18 +34,21 @@
                              </tr>
                              </thead>
 
-                             <tbody>
+                             <tbody id="tbody" data-value ='${userList}'>
                                 <c:forEach var="team" items='${userList}' varStatus="idxStatus">
-                             <tr>
-                                    <td style="width: 10%; -webkit-user-modify :read-write "  >${team.userName}</>
+                             <tr id="tr${idxStatus.index}" data-defaultValue="${idxStatus.index}">
+                                    <td style="width: 10%; -webkit-user-modify :read-write">${team.userName}</>
                                     <td style="width: 10%; -webkit-user-modify :read-write">${idxStatus.index}</td>
-                                    <td style="width: 70%"> <c:forEach var="role" items='${team.roles}' varStatus="index" >
-                                        <button ondblclick="remove_role(this)" type="button" class="btn btn-outline-primary">${role}</button></c:forEach>  </td>
-                                    <td style="width: 10%">
-                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#add-new" class="btn m-t-20 btn-info btn-block waves-effect waves-light">
+                                    <td id="td${idxStatus.index}" style="width: 70%">
+                                        <c:forEach var="role" items='${team.roles}' varStatus="index" >
+                                        <button id="td_role${index.index}" data-defaultValue="${index.index}" data-value="${role}" type="button" class="btn btn-outline-primary role_btn">${role}</button>
+                                        </c:forEach>
+                                    </td>
+                                    <td id="itme${idxStatus.index}" style="width: 10%">
+                                        <a data-value="${team.roles}" data-defaultValue="${idxStatus.index}" href="javascript:void(0)" data-toggle="modal" data-target="#add-new" class="btn m-t-20 btn-info btn-block waves-effect waves-light add_new_role">
                                             Add New
                                         </a>
-                                        <button onclick="deleteItem(this)" type="button" class="btn btn-danger btn-sm">Delete</button>
+                                        <button id="btn_${idxStatus.index}" data-value="${team.userName}" data-defaultValue="${idxStatus.index}" type="button" class="btn btn-danger btn-sm deletebtn">Delete</button>
                                     </td>
                                 </tr>
                                 </c:forEach>
@@ -63,13 +66,14 @@
                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                          </div>
                          <div class="modal-body">
+
                              <form>
                                      <div class="col-md-12">
-                                         <label class="control-label">Choose Category Color</label>
-                                         <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+                                         <label class="control-label">Choose role</label>
+                                         <select  id="select_role" class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
                                                 <c:forEach var="item" items='${userList}' varStatus="index" >
                                                     <c:forEach var="role" items='${item.roles}' varStatus="index" >
-                                                    <option value="success">${role}</option>
+                                                    <option value="${role}">${role}</option>
                                                     </c:forEach>
                                                 </c:forEach>
                                          </select>
@@ -77,7 +81,7 @@
                              </form>
                          </div>
                          <div class="modal-footer">
-                             <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
+                             <button id="select_role_save" type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
                              <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
                          </div>
                      </div>
@@ -111,21 +115,23 @@
                                      <div class="form-group row">
                                          <label for="lname" class="col-sm-3 text-right control-label col-form-label">Password</label>
                                          <div class="col-sm-9">
-                                             <input type="password" class="form-control" id="lname" placeholder="Password Here">
+                                             <input type="password" class="form-control" id="password" placeholder="Password Here">
                                          </div>
                                      </div>
                                      <div class="form-group row">
-                                     <label class="col-md-3 m-t-15">Multiple Select</label>
+                                     <label class="col-md-3 m-t-15">Multiple Select role</label>
                                      <div class="col-md-9">
                                          <select class="select2 form-control m-t-15" multiple="multiple" style="height: 36px;width: 100%;">
-                                        <c:forEach var="item" items='${userList}' varStatus="index" >
-                                            <c:forEach var="role" items='${item.roles}' varStatus="index" >
-                                             <option value="AK">${role}</option>
-                                            </c:forEach>
-                                        </c:forEach>
+                                             <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                 <c:forEach var="item" items='${userList}' varStatus="index" >
+                                                     <c:forEach var="role" items='${item.roles}' varStatus="index" >
+                                                         <option>${role}</option>
+                                                     </c:forEach>
+                                                 </c:forEach>
+                                             </optgroup>
                                          </select>
                                      </div>
-                                     </div>
+                                 </div>
                                      <div class="form-group row">
                                          <label class="col-md-3">File Upload</label>
                                          <div class="col-md-9">
@@ -144,31 +150,17 @@
                                  </div>
                              </form>
                          </div>
-                         <div class="modal-footer">
-                             <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
-                             <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                         </div>
                      </div>
                  </div>
              </div>
         </div>
-    <script src="<c:url value="/res/js/userjs.js"/>"></script>
+     <script src="<c:url value="/res/js/userjs.js"/>"></script>
      <script src="<c:url value="/res/js/select2.full.min.js"/>"></script>
-     <script src="<c:url value="/res/js/userjs.js"/>select2.min.js"></script>
-            <script>
-                //***********************************//
-                // For select 2
-                //***********************************//
+     <script src="<c:url value="/res/js/select2.min.js"/>"></script>
+     <script>
                 $(".select2").select2();
 
-            </script>
-
-<%--    <script type="text/javascript">--%>
-<%--        /****************************************--%>
-<%--         *       Basic Table                   *--%>
-<%--         ****************************************/--%>
-<%--        $('#user_table').DataTable();--%>
-<%--    </script>--%>
+     </script>
 
     </body>
 </html>
