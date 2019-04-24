@@ -3,6 +3,7 @@ package xyz.avengersofwap.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class User {
 
@@ -16,6 +17,7 @@ public class User {
 
 
     private List<String> roles;
+    private List<Team> belongsTeams;
 
     public User() {
 
@@ -32,6 +34,7 @@ public class User {
                 this.roles.add(r);
             }
         }
+        this.belongsTeams = new ArrayList<>();
     }
 
     public String getUserId() {
@@ -80,5 +83,32 @@ public class User {
 
     public void setRoles(List<String> roles) {
         this.roles = roles;
+    }
+
+    public void addToTeam(Team team) {
+        this.belongsTeams.add(team);
+    }
+
+    public void removeFromTeam(Team team) {
+        for (Team t: this.belongsTeams) {
+            if (t.equals(team)) {
+                this.belongsTeams.remove(t);
+                break;
+            }
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return userName.equals(user.userName) &&
+                gender.equals(user.gender);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userName, gender);
     }
 }
