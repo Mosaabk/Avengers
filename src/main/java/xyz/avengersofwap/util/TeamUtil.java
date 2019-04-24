@@ -7,27 +7,45 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TeamUtil {
-    static List<Team> teamList = new ArrayList<>();
+    static ArrayList<Team> teamList = new ArrayList<>();
 
-    public static List<Team> getAllTeams() {
+    static void initialTeams() {
         // mock data
         Team t1 = new Team(1, "team 1");
         t1.setDescription("We are the Team 1");
+        t1.addMember(UserUtil.findUserWithName("Allen"));
         Team t2 = new Team(2, "team 2");
         t2.setDescription("We are the Team 2");
+        t2.addMember(UserUtil.findUserWithName("Bob"));
         Team t3 = new Team(3, "team 3");
         t3.setDescription("We are the Team 3");
-        teamList = Arrays.asList(t1, t2, t3);
-        return teamList;
+        t3.addMember(UserUtil.findUserWithName("Steve"));
+        teamList.add(t1);
+        teamList.add(t2);
+        teamList.add(t3);
+    }
+
+    public static List<Team> getAllTeams() {
+        List<Team> aList = new ArrayList<>();
+        if (teamList.size() < 1) {
+            initialTeams();
+        }
+        for (Team t: teamList) {
+            if (!t.isDeleted()) {
+                aList.add(t);
+            }
+        }
+        return aList;
     }
 
     public static int nextTeamId() {
-        return teamList.size();
+        return teamList.size() + 1;
     }
 
     public static Team createNewTeam(String name) {
         int teamId = nextTeamId();
         Team team = new Team(teamId, name);
+        System.out.println("create new team: " + teamId);
         teamList.add(team);
         return team;
     }
@@ -41,5 +59,18 @@ public class TeamUtil {
             }
         }
         return team;
+    }
+
+    public static void deleteTeam(int teamId) {
+        System.out.println("delete team data: "+ teamId);
+        if (teamList != null && teamList.size() > 0) {
+            for (int i = 0; i < teamList.size(); i++) {
+                Team t = teamList.get(i);
+                if (t != null && t.getId() == teamId) {
+                    t.setDeleted(true);
+                    break;
+                }
+            }
+        }
     }
 }
