@@ -56,7 +56,7 @@
                                             <input type="hidden" name="userId" value="${team.userId}" />
                                             <input  type="button" class="btn btn-cyan btn-sm editBtn" value="Edit" />
                                         </form>
-                                        <button id="btn_${idxStatus.index}" data-value="${team.userName}" data-defaultValue="${team.userId}" type="button" class="btn btn-danger btn-sm deletebtn">Delete</button>
+                                        <button id="btn_${idxStatus.index}" data-value="${team.userName}" data-defaultValue="${idxStatus.index}" type="button" class="btn btn-danger btn-sm deletebtn">Delete</button>
                                     </td>
                                 </tr>
                                 </c:forEach>
@@ -130,7 +130,7 @@
                                      <label class="col-md-3 m-t-15">Multiple Select role</label>
                                      <div class="col-md-9">
                                          <select  id ="roles" class="select2 form-control m-t-15" multiple="multiple" style="height: 36px;width: 100%;">
-                                             <optgroup label="Alaskan/Hawaiian Time Zone">
+                                             <optgroup label="ahmud group">
                                                  <c:forEach var="item" items='${userList}' varStatus="index" >
                                                      <c:forEach var="role" items='${item.roles}' varStatus="index" >
                                                          <option>${role}</option>
