@@ -1,34 +1,105 @@
 package xyz.avengersofwap.controller;
 
+import xyz.avengersofwap.model.Task;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
+import java.util.SortedMap;
 
-@WebServlet(name = "TaskServlet", urlPatterns = "/task")
+@WebServlet(name = "TaskServlet", urlPatterns = {"/task"})
 public class TaskServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String reqType = "";
+        try {
+            reqType = request.getParameter("r");
+            reqType = reqType.toLowerCase();
+        }
+        catch(Exception e)
+        {
+            reqType = "";
+        }
+        Boolean status = false;
         switch(reqType){
-            case "Edit":
+            case "save":
+                System.out.println("Save");
+                try{
+
+                    status = true;
+                }
+                catch (Exception e){
+
+                }
                 break;
-            case "Save":
+            case "add":
+                System.out.println("Add");
+                try{
+                    status = true;
+                }
+                catch (Exception e){
+
+                }
                 break;
-            case "New":
-                break;
-            case "Add":
-                break;
-            case "Delete":
-                break;
-            case "Get":
+            case "delete":
+                System.out.println("Del");
+                try{
+                    status = true;
+                }
+                catch (Exception e){
+
+                }
                 break;
         }
+        if(status){
+            response.sendRedirect("/task");
+        }
+        else{
+            request.getRequestDispatcher("WEB-INF/views/Task/task.jsp").forward(request, response);
+        }
+
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/views/Task/task.jsp").forward(request, response);
+        String reqType = "";
+        try {
+            reqType = request.getParameter("r");
+            reqType = reqType.toLowerCase();
+        }
+        catch(Exception e)
+        {
+            reqType = "";
+        }
+
+        switch(reqType){
+            case "edit":
+                try{
+
+                }
+                catch (Exception e){
+
+                }
+                request.getRequestDispatcher("WEB-INF/views/Task/Edit.jsp").forward(request, response);
+                break;
+            case "new":
+                try{
+
+                }
+                catch (Exception e){
+
+                }
+                request.getRequestDispatcher("WEB-INF/views/Task/new.jsp").forward(request, response);
+                break;
+            default:
+                List<Task> data = Task.getAllTasks();
+                request.getSession().setAttribute("data", data);
+                request.getRequestDispatcher("WEB-INF/views/Task/task.jsp").forward(request, response);
+                break;
+        }
     }
 }
