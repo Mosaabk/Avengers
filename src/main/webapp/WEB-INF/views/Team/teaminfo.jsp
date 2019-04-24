@@ -142,12 +142,12 @@
         $.each($(".select2 option:selected"), function(){
             members.push($(this).val());
         });
-        const teamId = sessionStorage.getItem();
+        const teamId = sessionStorage.getItem("teamId");
         console.log("session.teamId: "+teamId);
         const tid = $('#submitBtn').attr('data-defaultValue');
         console.log("data-value: " + tid);
         const postData = {
-            'teamId': teamId,
+            'teamId': tid,
             'name': tname,
             'desc': tdesc,
             'members': members

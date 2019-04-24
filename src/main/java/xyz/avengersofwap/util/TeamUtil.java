@@ -63,7 +63,7 @@ public class TeamUtil {
     }
 
     public static void deleteTeam(int teamId) {
-        System.out.println("delete team data: "+ teamId);
+        System.out.println("delete team data: " + teamId);
         if (teamList != null && teamList.size() > 0) {
             for (int i = 0; i < teamList.size(); i++) {
                 Team t = teamList.get(i);
@@ -73,6 +73,7 @@ public class TeamUtil {
                 }
             }
         }
+    }
         
     public  static  List<User> getAllUser(){
         User u1 = new User("a","22-Apr-2019 23:09:15.265 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 [\"ajp-nio-8009\"]\n" +
