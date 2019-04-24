@@ -11,6 +11,9 @@ public class User {
     private String userName;
     private String gender;
     private String password;
+    private String phone;
+    private String userId;
+
 
     private List<String> roles;
 
@@ -29,6 +32,22 @@ public class User {
                 this.roles.add(r);
             }
         }
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getUserName() {
