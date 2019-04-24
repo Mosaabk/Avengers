@@ -3,8 +3,8 @@ $(document).ready(function () {
     $('#user_table').DataTable();
 
     $('.add_new_role').click(function () {
-        const view =  $(this);
-       //view.attr("data-value");
+        const view = $(this);
+        //view.attr("data-value");
         let index = view.attr("data-defaultValue");
         userId = view.attr("data-value");
         // $("#td"+index).append(" <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\">+c+</button>")
@@ -12,35 +12,35 @@ $(document).ready(function () {
     })
 
 
-    $(".deletebtn").click(function(){
+    $(".deletebtn").click(function () {
         const view = $(this);
-        let userID=view.attr("data-value");
-        let index=view.attr("data-defaultValue");
-        $("#tr"+index).empty();
+        let userID = view.attr("data-value");
+        let index = view.attr("data-defaultValue");
+        $("#tr" + index).empty();
 
 
         $.ajax({
             url: "http://localhost:8080/delete?",
             type: "GET",
-            data:{
-                userid:userID
+            data: {
+                userid: userID
             },
-            cache:false,
+            cache: false,
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 location.reload();
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             },
-            error:function(err){
+            error: function (err) {
                 alert(err.toString());
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             }
         });
     });
-    $(".role_btn").click(function(){
-        const view  = $(this);
+    $(".role_btn").click(function () {
+        const view = $(this);
         let rolsId = view.attr("data-value");
-        let userId=view.attr("data-defaultValue");
+        let userId = view.attr("data-defaultValue");
 
         // view.remove();
         //
@@ -48,17 +48,17 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:8080/deleterole?",
             type: "GET",
-            data:{
-                rolsid:rolsId,
-                userid : userId
+            data: {
+                rolsid: rolsId,
+                userid: userId
             },
-            cache:false,
+            cache: false,
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 location.reload();
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             },
-            error:function(err){
+            error: function (err) {
                 alert(err.toString());
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             }
@@ -66,31 +66,29 @@ $(document).ready(function () {
     });
 
 
-
     $("#select_role_save").click(function () {
-        const val =$("#select_role");
-        let options= val.val();
+        const val = $("#select_role");
+        let options = val.val();
 
         $.ajax({
             url: "http://localhost:8080/addrole?",
             type: "GET",
-            data:{
-                userid:userId,
-                role:options
+            data: {
+                userid: userId,
+                role: options
             },
-            cache:false,
+            cache: false,
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 location.reload();
-                userId= "";
-               //  $("#td"+index).append(" <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\">+c+</button>")
+                userId = "";
+                //  $("#td"+index).append(" <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\">+c+</button>")
             },
-            error:function(err){
+            error: function (err) {
                 alert(err.toString());
-                userId= "";
+                userId = "";
             }
         });
-
 
 
     });
@@ -103,18 +101,18 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:8080/userinfo?",
             type: "GET",
-            data:{
-                userid : userId
+            data: {
+                userid: userId
             },
-            cache:false,
+            cache: false,
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 alert("11111");
-                window.location.href="http://localhost:8080/userinfo?userid="+userId;
+                window.location.href = "http://localhost:8080/userinfo?userid=" + userId;
             },
-            error:function(err){
+            error: function (err) {
 
-                window.location.href="http://localhost:8080/userinfo?userid="+userId;
+                window.location.href = "http://localhost:8080/userinfo?userid=" + userId;
             }
         });
 
@@ -124,18 +122,18 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:8080/userinfo?",
             type: "GET",
-            data:{
+            data: {
                 name: $("#userName").val(),
-                password : $("#password").val(),
+                password: $("#password").val(),
                 uid: $("#uid").val(),
-                roles : $("#roles").val()
+                roles: $("#roles").val()
             },
-            cache:false,
+            cache: false,
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 location.reload();
             },
-            error:function(err) {
+            error: function (err) {
                 console.log(err);
             }
         });
