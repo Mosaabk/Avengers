@@ -23,7 +23,7 @@ $(document).ready(function () {
                  window.location.href="/user";
             },
             error: function (err) {
-                     alert("success 都是本地数据..等待后台中....");
+                     alert("success 都是本地数据..");
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             }
         });
