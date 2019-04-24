@@ -37,8 +37,8 @@
                              <tbody id="tbody" data-value ='${userList}'>
                                 <c:forEach var="team" items='${userList}' varStatus="idxStatus">
                              <tr id="tr${idxStatus.index}" data-defaultValue="${idxStatus.index}">
-                                    <td style="width: 10%; -webkit-user-modify :read-write">${team.userName}</>
-                                    <td style="width: 10%; -webkit-user-modify :read-write">${idxStatus.index}</td>
+                                    <td style="width: 10%;">${team.userName}</>
+                                    <td style="width: 10%;">${idxStatus.index}</td>
                                     <td id="td${idxStatus.index}" style="width: 70%">
                                         <c:forEach var="role" items='${team.roles}' varStatus="index" >
                                         <button id="td_role${index.index}" data-defaultValue="${index.index}" data-value="${role}" type="button" class="btn btn-outline-primary role_btn">${role}</button>
@@ -47,6 +47,9 @@
                                     <td id="itme${idxStatus.index}" style="width: 10%">
                                         <a data-value="${team.roles}" data-defaultValue="${idxStatus.index}" href="javascript:void(0)" data-toggle="modal" data-target="#add-new" class="btn m-t-20 btn-info btn-block waves-effect waves-light add_new_role">
                                             Add New
+                                        </a>
+                                        <a data-value="${team.roles}" data-defaultValue="${idxStatus.index}" href="javascript:void(0)" data-toggle="modal" data-target="#add-new" class="btn m-t-20 btn-info btn-block waves-effect waves-light">
+                                            Edit
                                         </a>
                                         <button id="btn_${idxStatus.index}" data-value="${team.userName}" data-defaultValue="${idxStatus.index}" type="button" class="btn btn-danger btn-sm deletebtn">Delete</button>
                                     </td>
