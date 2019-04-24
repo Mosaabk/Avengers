@@ -80,6 +80,17 @@ public class TaskServlet extends HttpServlet {
             case "edit":
                 try{
 
+                    int tId = 0;
+                    try {
+                        tId = Integer.parseInt( request.getParameter("id"));
+
+                    }
+                    catch(Exception e)
+                    {
+                        tId = 0;
+                    }
+                    request.getSession().setAttribute("task", Task.getById(tId));
+                    request.getRequestDispatcher("WEB-INF/views/Task/Edit.jsp").forward(request, response);
                 }
                 catch (Exception e){
 
@@ -88,7 +99,8 @@ public class TaskServlet extends HttpServlet {
                 break;
             case "new":
                 try{
-
+                    request.getSession().setAttribute("task", new Task());
+                    request.getRequestDispatcher("WEB-INF/views/Task/Edit.jsp").forward(request, response);
                 }
                 catch (Exception e){
 

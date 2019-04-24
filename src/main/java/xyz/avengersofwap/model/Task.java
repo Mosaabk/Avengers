@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Task {
     public int Id;
+    public int id(){return Id;}
     public int priority;
     public Date Duedate;
     public int DeveloperId;
@@ -41,7 +42,19 @@ public class Task {
     public Task(int taskId){
 
     }
+    public  static Task getById(int taskId){
+        List<Task> result = new ArrayList<>();
 
+        result = DataDAO.getTasks(" Where t.Id = ? ", Arrays.asList((Object)taskId));
+
+        try{
+            System.out.println(result.get(0).id());
+        }
+        catch (Exception e){
+            System.out.println("Error");
+        }
+        return result.get(0);
+    }
     public static List<Task> getAllTasks(){
         List<Task> result = new ArrayList<>();
         result = DataDAO.getTasks("", new ArrayList<Object>());
