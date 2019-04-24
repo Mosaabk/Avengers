@@ -63,15 +63,18 @@ public class UserUtil {
      * @return
      */
     public  static List<User> getAllUser(){
-        User u1 = new User("a","22-Apr-2019 23:0","c","d","d");
-        u1.setUserId("213123123");
+        User u1 = new User("a","1234","c","group1","group2");
+        u1.setUserId("65536");
         u1.setLocation("51.508742,-0.120850");
-        User u2 = new User("b","e","c","d","d","d","d","zzzy zzy","d","d","d","d","d");
-        u2.setUserId("wqewqe");
+        u1.setAddress("farifiel");
+        User u2 = new User("b","zhang","c","group3","group4","group1");
+        u2.setUserId("zhangziyi");
         u1.setLocation("51.508742,-0.120850");
-        User u3 = new User("c","f","h","d","d");
-        u3.setUserId("2131231rew2323");
+        u2.setAddress("farifiel");
+        User u3 = new User("c","wang","h","group5","group7");
+        u3.setUserId("admin");
         u1.setLocation("51.508742,-0.120850");
+        u3.setAddress("farifiel");
         return Arrays.asList(u1, u2, u3);
     }
 }

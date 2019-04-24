@@ -68,7 +68,7 @@ $(document).ready(function () {
     $("#select_role_save").click(function () {
         const val = $("#select_role");
         let options = val.val();
-        $("#td"+index).append(" <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\" >d</button>")
+        $("#td"+index).append(" <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\" >group7</button>")
 
         $.ajax({
             url: "http://localhost:8080/addrole?",
@@ -124,7 +124,7 @@ $(document).ready(function () {
             "                                    <td style=\"width: 10%;\">a</td>\n" +
             "                                    <td id=\"td${idxStatus.index}\" style=\"width: 70%\">\n" +
             "                                        <c:forEach var=\"role\" items='${team.roles}' varStatus=\"index\" >\n" +
-            "                                        <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\">a</button>\n" +
+            "                                        <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\">group1</button>\n" +
             "                                        </c:forEach>\n" +
             "                                    </td>\n" +
             "                                    <td> <a id=\"a${idxStatus.index}\" data-value=\"${team.location}\" class=\"locala\" data-target=\"#map\"  data-toggle=\"modal\" href=\"javascript:void(0);\">a</a></td>\n" +

@@ -47,13 +47,13 @@
                                         <button id="td_role${index.index}" data-defaultValue="${index.index}" data-value="${role}" type="button" class="btn btn-outline-primary role_btn">${role}</button>
                                         </c:forEach>
                                     </td>
-                                    <td> <a id="a${idxStatus.index}" data-value="${team.location}" class="locala" data-target="#map"  data-toggle="modal" href="javascript:void(0);">${team.userName}</a></td>
+                                    <td> <a id="a${idxStatus.index}" data-value="${team.location}" class="locala" data-target="#map"  data-toggle="modal" href="javascript:void(0);">${team.address}</a></td>
                                     <td id="itme${idxStatus.index}" style="width: 10%">
                                         <a data-value="${team.userId}" data-defaultValue="${idxStatus.index}" href="javascript:void(0)" data-toggle="modal" data-target="#add-new" class="btn m-t-20 btn-info btn-block waves-effect waves-light add_new_role">
                                             Add New
                                         </a>
                                         <form >
-                                            <input type="hidden" name="userId" value="${team.userId}" />
+                                            <input type="hidden" name="userId" value="${team.address}" />
                                             <input  type="button" class="btn btn-cyan btn-sm editBtn" value="Edit" />
                                         </form>
                                         <button id="btn_${idxStatus.index}" data-value="${team.userName}" data-defaultValue="${idxStatus.index}" type="button" class="btn btn-danger btn-sm deletebtn">Delete</button>

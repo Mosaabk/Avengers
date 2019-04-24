@@ -83,11 +83,11 @@
                         <div class="col-md-9">
                             <select class="select2 form-control m-t-15" multiple="multiple"  id="roles" style="height: 36px;width: 100%;">
                                 <optgroup label="all group">
-                                <option>d</option>
-                                <option>d</option>
-                                <option>d</option>
-                                <option>d</option>
-                                <option>d</option>
+                                <option>group1</option>
+                                <option>group2</option>
+                                <option>group3</option>
+                                <option>group4</option>
+                                <option>group5</option>
                                 </optgroup>
                             </select>
                         </div>
