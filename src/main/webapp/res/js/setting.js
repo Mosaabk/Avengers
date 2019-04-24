@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
-
-})
+});
 
 function showPreview(source, imgId) {
     var file = source.files[0];
