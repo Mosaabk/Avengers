@@ -57,32 +57,38 @@
                     <div class="form-group row col-md-6">
                         <label for="uid" class="col-sm-3 text-right control-label col-form-label">user id</label>
                         <div class="col-sm-9">
-                            <input  type="text" class="form-control" id="uid" placeholder="Team Name Here">
+                            <input  type="text" class="form-control" id="uid" placeholder="user id">
                         </div>
                     </div>
                     <div class="form-group row col-md-6">
                         <label for="tname" class="col-sm-3 text-right control-label col-form-label">name</label>
                         <div class="col-sm-9">
-                            <input  type="text" class="form-control" id="tname" placeholder="Team Name Here">
+                            <input  type="text" class="form-control" id="tname" placeholder=" Name Here">
                         </div>
                     </div>
                     <div class="form-group row col-md-6">
                         <label for="pwd" class="col-sm-3 text-right control-label col-form-label">password</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="pwd" placeholder="Team Description Here">
+                            <input type="text" class="form-control" id="pwd" placeholder="password Here">
                         </div>
                     </div>
                     <div class="form-group row col-md-6">
-                        <label for="location" class="col-sm-3 text-right control-label col-form-label">password</label>
+                        <label for="location" class="col-sm-3 text-right control-label col-form-label">address</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="location" placeholder="Team Description Here">
+                            <input type="text" class="form-control" id="location" placeholder="address Here">
                         </div>
                     </div>
                     <div class="form-group row col-md-6">
                         <label class="col-sm-3 text-right control-label col-form-label">roles</label>
                         <div class="col-md-9">
                             <select class="select2 form-control m-t-15" multiple="multiple"  id="roles" style="height: 36px;width: 100%;">
-
+                                <optgroup label="all group">
+                                <option>d</option>
+                                <option>d</option>
+                                <option>d</option>
+                                <option>d</option>
+                                <option>d</option>
+                                </optgroup>
                             </select>
                         </div>
                     </div>

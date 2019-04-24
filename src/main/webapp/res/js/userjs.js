@@ -1,13 +1,14 @@
 $(document).ready(function () {
     var userId;
+    var  index;
     $('#user_table').DataTable();
 
     $('.add_new_role').click(function () {
         const view = $(this);
         //view.attr("data-value");
-        let index = view.attr("data-defaultValue");
+         index = view.attr("data-defaultValue");
         userId = view.attr("data-value");
-        // $("#td"+index).append(" <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\">+c+</button>")
+        let val = $("#roles").val();
 
     })
 
@@ -15,8 +16,8 @@ $(document).ready(function () {
     $(".deletebtn").click(function () {
         const view = $(this);
         let userID = view.attr("data-value");
-        // let index = view.attr("data-defaultValue");
-        // $("#tr" + index).empty();
+        let index = view.attr("data-defaultValue");
+        $("#tr" + index).remove();
         $.ajax({
             url: "http://localhost:8080/delete?",
             type: "GET",
@@ -30,7 +31,7 @@ $(document).ready(function () {
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             },
             error: function (err) {
-                alert(err);
+                // alert(err);
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             }
         });
@@ -40,7 +41,7 @@ $(document).ready(function () {
         let rolsId = view.attr("data-value");
         let userId = view.attr("data-defaultValue");
 
-        // view.remove();
+        view.remove();
         //
 
         $.ajax({
@@ -57,7 +58,7 @@ $(document).ready(function () {
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             },
             error: function (err) {
-                alert(err.toString());
+                // alert(err.toString());
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             }
         });
@@ -67,6 +68,7 @@ $(document).ready(function () {
     $("#select_role_save").click(function () {
         const val = $("#select_role");
         let options = val.val();
+        $("#td"+index).append(" <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\" >d</button>")
 
         $.ajax({
             url: "http://localhost:8080/addrole?",
@@ -83,7 +85,7 @@ $(document).ready(function () {
                 //  $("#td"+index).append(" <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\">+c+</button>")
             },
             error: function (err) {
-                alert(err.toString());
+                // alert(err.toString());
                 userId = "";
             }
         });
@@ -108,14 +110,36 @@ $(document).ready(function () {
                 window.location.href = "http://localhost:8080/userinfo?userid=" + userId;
             },
             error: function (err) {
-                alert(err.toString());
+                // alert(err.toString());
+                window.location.href = "http://localhost:8080/userinfo?userid=" + userId;
             }
         });
 
     })
 
     $("#submit_btn").click(function () {
-        var rolesvalue = alert($("#roles").val());
+        $("#tbody").append("<tr id=\"tr${idxStatus.index}\" data-defaultValue=\"${idxStatus.index}\">\n" +
+            "                                    <td style=\"width: 10%;\">a</>\n" +
+            "                                    <td style=\"width: 10%;\">a</td>\n" +
+            "                                    <td style=\"width: 10%;\">a</td>\n" +
+            "                                    <td id=\"td${idxStatus.index}\" style=\"width: 70%\">\n" +
+            "                                        <c:forEach var=\"role\" items='${team.roles}' varStatus=\"index\" >\n" +
+            "                                        <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\">a</button>\n" +
+            "                                        </c:forEach>\n" +
+            "                                    </td>\n" +
+            "                                    <td> <a id=\"a${idxStatus.index}\" data-value=\"${team.location}\" class=\"locala\" data-target=\"#map\"  data-toggle=\"modal\" href=\"javascript:void(0);\">a</a></td>\n" +
+            "                                    <td id=\"itme${idxStatus.index}\" style=\"width: 10%\">\n" +
+            "                                        <a data-value=\"${team.userId}\" data-defaultValue=\"${idxStatus.index}\" href=\"javascript:void(0)\" data-toggle=\"modal\" data-target=\"#add-new\" class=\"btn m-t-20 btn-info btn-block waves-effect waves-light add_new_role\">\n" +
+            "                                            Add New\n" +
+            "                                        </a>\n" +
+            "                                        <form >\n" +
+            "                                            <input type=\"hidden\" name=\"userId\" value=\"${team.userId}\" />\n" +
+            "                                            <input  type=\"button\" class=\"btn btn-cyan btn-sm editBtn\" value=\"Edit\" />\n" +
+            "                                        </form>\n" +
+            "                                        <button id=\"btn_${idxStatus.index}\" data-value=\"${team.userName}\" data-defaultValue=\"${idxStatus.index}\" type=\"button\" class=\"btn btn-danger btn-sm deletebtn\">Delete</button>\n" +
+            "                                    </td>\n" +
+            "                                </tr>");
+        // var rolesvalue = alert($("#roles").val());
         $.ajax({
             url: "http://localhost:8080/addnewuser?",
             type: "GET",
@@ -131,7 +155,7 @@ $(document).ready(function () {
                 location.reload();
             },
             error: function (err) {
-                alert(err.toString());
+                // alert(err.toString());
             }
         });
 

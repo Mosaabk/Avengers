@@ -23,7 +23,7 @@ $(document).ready(function () {
                  window.location.href="http://localhost:8080/user";
             },
             error: function (err) {
-                alert(err);
+                // alert(err);
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             }
         });
