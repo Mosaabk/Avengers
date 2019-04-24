@@ -10,7 +10,7 @@ import java.util.Map;
 public class DataDAO {
 
     private static final String DB_DRIVER = "org.h2.Driver";
-    private static final String DB_CONNECTION = "jdbc:h2:D:\\MUM\\WAP\\Project\\database\\avengers";
+    private static final String DB_CONNECTION = "jdbc:h2:~/avengers";
     private static final String DB_USER = "";
     private static final String DB_PASSWORD = "";
 
@@ -62,7 +62,7 @@ public class DataDAO {
         try {
             Class.forName(DB_DRIVER);
         } catch (ClassNotFoundException e) {
-            System.out.println("Class Name error " + e.getMessage());
+            System.out.println("Class Name " + e.getMessage());
         }
         try {
             dbConnection = DriverManager.getConnection(DB_CONNECTION, DB_USER,
