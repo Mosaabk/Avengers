@@ -45,19 +45,19 @@
                 <div class="card-body">
                     <h4 class="card-title">Teams</h4>
                     <div class="form-group row col-md-6">
-                        <label for="tname" class="col-sm-3 text-right control-label col-form-label">Name</label>
+                        <label for="tname" class="col-sm-3 text-right control-label col-form-label">name</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="tname" placeholder="Team Name Here">
                         </div>
                     </div>
                     <div class="form-group row col-md-6">
-                        <label for="tdesc" class="col-sm-3 text-right control-label col-form-label">Description</label>
+                        <label for="tdesc" class="col-sm-3 text-right control-label col-form-label">password</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="tdesc" placeholder="Team Description Here">
                         </div>
                     </div>
                     <div class="form-group row col-md-6">
-                        <label class="col-sm-3 text-right control-label col-form-label">Members</label>
+                        <label class="col-sm-3 text-right control-label col-form-label">roles</label>
                         <div class="col-md-9">
                             <select class="select2 form-control m-t-15" multiple="multiple" style="height: 36px;width: 100%;">
                                 <option value="Ali">Ali</option>
