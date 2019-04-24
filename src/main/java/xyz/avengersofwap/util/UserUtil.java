@@ -43,13 +43,35 @@ public class UserUtil {
         }
         return null;
     }
+
+    /**
+     * {
+     *     data :[
+     *     {
+     *         username:
+     *         password:
+     *         phone:
+     *         roles :[
+         *         rolesId:
+         *         rolesNmae:
+     *
+     *         ],
+     *         userId:
+     *     }
+     *     ]
+     * }
+     * @return
+     */
     public  static List<User> getAllUser(){
         User u1 = new User("a","22-Apr-2019 23:0","c","d","d");
         u1.setUserId("213123123");
+        u1.setLocation("51.508742,-0.120850");
         User u2 = new User("b","e","c","d","d","d","d","zzzy zzy","d","d","d","d","d");
         u2.setUserId("wqewqe");
+        u1.setLocation("51.508742,-0.120850");
         User u3 = new User("c","f","h","d","d");
         u3.setUserId("2131231rew2323");
+        u1.setLocation("51.508742,-0.120850");
         return Arrays.asList(u1, u2, u3);
     }
 }

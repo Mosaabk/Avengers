@@ -12,6 +12,9 @@ $(document).ready(function () {
     })
 
 
+    $("#locala").
+
+
     $(".deletebtn").click(function () {
         const view = $(this);
         let userID = view.attr("data-value");
