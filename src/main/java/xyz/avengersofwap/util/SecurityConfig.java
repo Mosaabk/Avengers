@@ -5,6 +5,8 @@ import java.util.*;
 public class SecurityConfig {
     public static final String ROLE_MANAGER = "MANAGER";
     public static final String ROLE_EMPLOYEE = "EMPLOYEE";
+    public static final String ROLE_DEVELOPER = "DEVELOPER";
+
 
     // String: Role
     // List<String>: urlPatterns.
@@ -19,16 +21,26 @@ public class SecurityConfig {
         // Configure For "EMPLOYEE" Role.
         List<String> urlPatterns1 = new ArrayList<String>();
 
-        urlPatterns1.add("/userInfo");
-        urlPatterns1.add("/employeeTask");
+        urlPatterns1.add("/task");
+        urlPatterns1.add("/home");
+        urlPatterns1.add("/Welcome");
+        urlPatterns1.add("/");
+        urlPatterns1.add("/user");
+        urlPatterns1.add("/team");
 
         mapConfig.put(ROLE_EMPLOYEE, urlPatterns1);
 
         // Configure For "MANAGER" Role.
         List<String> urlPatterns2 = new ArrayList<String>();
 
-        urlPatterns2.add("/userInfo");
-        urlPatterns2.add("/managerTask");
+        urlPatterns2.add("/task");
+        urlPatterns2.add("/user");
+        urlPatterns2.add("/team");
+        urlPatterns2.add("/");
+        urlPatterns2.add("/Welcome");
+
+
+
 
         mapConfig.put(ROLE_MANAGER, urlPatterns2);
     }

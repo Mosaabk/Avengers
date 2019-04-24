@@ -10,41 +10,21 @@ import java.util.Map;
 public class DataDAO {
 
     private static final String DB_DRIVER = "org.h2.Driver";
-    private static final String DB_CONNECTION = "jdbc:h2:/database/avengers";
+    private static final String DB_CONNECTION = "jdbc:h2:~/avengers";
     private static final String DB_USER = "";
     private static final String DB_PASSWORD = "";
 
-    private static final Map<String, User> mapUsers = new HashMap<String, User>();
-
-    static {
-        initUsers();
-    }
-
-    public static void main(){
-        findUser("test", "test");
-    }
-
-    private static void initUsers() {
-
-        // This user has a role as EMPLOYEE.
-        User emp = new User("employee1", "123", User.GENDER_MALE, //
-                SecurityConfig.ROLE_EMPLOYEE);
-
-        // This user has 2 roles EMPLOYEE and MANAGER.
-        User mng = new User("manager1", "123", User.GENDER_MALE, //
-                SecurityConfig.ROLE_EMPLOYEE, SecurityConfig.ROLE_MANAGER);
-
-        mapUsers.put(emp.getUserName(), emp);
-        mapUsers.put(mng.getUserName(), mng);
-    }
 
     // Find a User by userName and password.
     public static User findUser(String userName, String password) {
+        System.out.println(userName);
+        System.out.println(password);
         Connection connection = getDBConnection();
         PreparedStatement selectPreparedStatement = null;
 
+        User user = new User();
 
-        String SelectQuery = "select * from Users where username=? AND password = ?";
+        String SelectQuery = "SELECT * from User where email=?  AND password=?";
 
         try {
             selectPreparedStatement = connection.prepareStatement(SelectQuery);
@@ -53,23 +33,26 @@ public class DataDAO {
             ResultSet res = selectPreparedStatement.executeQuery();
 
             while (res.next()){
-                System.out.println(res);
+                int id  = res.getInt("id");
+                String name = res.getString("name");
+                String phone = res.getString("phone");
+
+
+                return new User(userName, password, User.GENDER_MALE,
+                        SecurityConfig.ROLE_EMPLOYEE);
+
             }
 
             selectPreparedStatement.close();
 
             connection.commit();
+            connection.close();
         } catch (SQLException e) {
             System.out.println("Exception Message " + e.getLocalizedMessage());
          } catch (Exception e) {
             e.printStackTrace();
         }
 
-
-//        User u = mapUsers.get(userName);
-//        if (u != null && u.getPassword().equals(password)) {
-//            return u;
-//        }
         return null;
     }
 
@@ -79,14 +62,14 @@ public class DataDAO {
         try {
             Class.forName(DB_DRIVER);
         } catch (ClassNotFoundException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Class Name " + e.getMessage());
         }
         try {
             dbConnection = DriverManager.getConnection(DB_CONNECTION, DB_USER,
                     DB_PASSWORD);
             return dbConnection;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Message " + e.getMessage());
         }
         return dbConnection;
     }

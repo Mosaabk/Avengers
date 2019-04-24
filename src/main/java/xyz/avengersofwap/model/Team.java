@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
+    private int id;
     private String name;
     private String description = "";
     private List<User> members = new ArrayList<>();
 
-    public Team(String name) {
+    public Team(int id, String name) {
+        this.id = id;
         this.name = name;
     }
 
@@ -42,5 +44,9 @@ public class Team {
 
     public void setMembers(List<User> members) {
         this.members = members;
+    }
+
+    public int getId() {
+        return id;
     }
 }

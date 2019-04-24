@@ -1,9 +1,9 @@
 <%@tag description="Overall Page template" pageEncoding="UTF-8"%>
 <%@attribute name="preload" fragment="true" %>
 <%@attribute name="topbar" fragment="true" %>
-<%@attribute name="left-sidebar" fragment="true" %>
-<%@attribute name="page-wrapper" fragment="true" %>
-<%@attribute name="main-wrapper" fragment="true" %>
+<%@attribute name="leftSidebar" fragment="true" %>
+<%@attribute name="pageWrapper" fragment="true" %>
+<%@attribute name="mainWrapper" fragment="true" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <head>
@@ -43,10 +43,10 @@
             <!-- End Sidebar navigation -->
         </div>
         <!-- End Sidebar scroll-->
-        <jsp:invoke fragment="left-sidebar"/>
+        <jsp:invoke fragment="leftSidebar"/>
     </aside>
 
-    <jsp:invoke fragment="main-wrapper"/>
+    <jsp:invoke fragment="mainWrapper"/>
 </div>
 
 <div class="page-wrapper">

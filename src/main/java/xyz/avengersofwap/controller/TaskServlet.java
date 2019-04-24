@@ -10,6 +10,21 @@ import java.io.IOException;
 @WebServlet(name = "TaskServlet", urlPatterns = "/task")
 public class TaskServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String reqType = "";
+        switch(reqType){
+            case "Edit":
+                break;
+            case "Save":
+                break;
+            case "New":
+                break;
+            case "Add":
+                break;
+            case "Delete":
+                break;
+            case "Get":
+                break;
+        }
 
     }
 

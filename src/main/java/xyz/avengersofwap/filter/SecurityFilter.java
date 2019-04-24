@@ -26,9 +26,14 @@ public class SecurityFilter implements Filter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
             throws IOException, ServletException {
+
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
 
+        if(request.getRequestURI().matches(".*(css|jpg|png|gif|js).*")){
+            chain.doFilter(request, response);
+            return;
+        }
         String servletPath = request.getServletPath();
 
         // User information stored in the Session.
@@ -57,7 +62,7 @@ public class SecurityFilter implements Filter {
 
             // If the user is not logged in,
             // Redirect to the login page.
-            if (loginedUser == null) {
+            if (loginedUser == null&& !request.getRequestURI().contains("res")) {
 
                 String requestUri = request.getRequestURI();
 
@@ -73,7 +78,7 @@ public class SecurityFilter implements Filter {
             if (!hasPermission) {
 
                 RequestDispatcher dispatcher //
-                        = request.getServletContext().getRequestDispatcher("/WEB-INF/views/accessDenied.jsp");
+                        = request.getServletContext().getRequestDispatcher("/WEB-INF/views/Common/accessDenied.jsp");
 
                 dispatcher.forward(request, response);
                 return;

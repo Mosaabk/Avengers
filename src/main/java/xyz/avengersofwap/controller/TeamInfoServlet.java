@@ -7,12 +7,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class WelcomeServlet extends HttpServlet {
+@WebServlet("/teamInfo")
+public class TeamInfoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/views/Common/pageWrapperDemo.jsp").forward(request, response);
+//        String teamId = request.getParameter("teamId");
+//        if (!teamId.isEmpty()) {
+//            request.setAttribute("teamId", teamId);
+//        }
+        request.getRequestDispatcher("WEB-INF/views/Team/teaminfo.jsp").forward(request, response);
     }
 }
