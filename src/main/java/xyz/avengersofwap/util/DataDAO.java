@@ -13,7 +13,7 @@ import java.util.Map;
 public class DataDAO {
 
     private static final String DB_DRIVER = "org.h2.Driver";
-    private static final String DB_CONNECTION = "jdbc:h2:E:\\MUM\\WAP\\Project\\App\\database\\avengers";
+    private static final String DB_CONNECTION = "jdbc:h2:/Users/Mosaabk/Documents/Avengers/database/avengers";
     private static final String DB_USER = "";
     private static final String DB_PASSWORD = "";
 
@@ -39,9 +39,24 @@ public class DataDAO {
                 String name = res.getString("name");
                 String phone = res.getString("phone");
 
+                String role = "";
 
-                return new User(userName, password, User.GENDER_MALE,
-                        SecurityConfig.ROLE_EMPLOYEE);
+                switch (res.getInt("role")){
+                    case 1:
+                        role = SecurityConfig.ROLE_EMPLOYEE;
+                        break;
+                    case 2:
+                        role = SecurityConfig.ROLE_DEVELOPER;
+                        break;
+                    case 3:
+                        role = SecurityConfig.ROLE_MANAGER;
+                        break;
+                        default:
+                            role=SecurityConfig.ROLE_EMPLOYEE;
+
+                }
+
+                return new User(userName, password, User.GENDER_MALE, role);
 
             }
 
