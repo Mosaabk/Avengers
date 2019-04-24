@@ -31,6 +31,7 @@
                                  <th scope="col">password</th>
                                  <th scope="col">userId</th>
                                  <th scope="col">roles</th>
+                                 <th scope="col">location</th>
                                  <th scope="col"> </th>
                              </tr>
                              </thead>
@@ -46,6 +47,7 @@
                                         <button id="td_role${index.index}" data-defaultValue="${index.index}" data-value="${role}" type="button" class="btn btn-outline-primary role_btn">${role}</button>
                                         </c:forEach>
                                     </td>
+                                    <td> <a id="a${idxStatus.index}" data-value="${team.location}" class="locala" data-target="#map"  data-toggle="modal" href="javascript:void(0);">${team.userName}</a></td>
                                     <td id="itme${idxStatus.index}" style="width: 10%">
                                         <a data-value="${team.userId}" data-defaultValue="${idxStatus.index}" href="javascript:void(0)" data-toggle="modal" data-target="#add-new" class="btn m-t-20 btn-info btn-block waves-effect waves-light add_new_role">
                                             Add New
@@ -159,14 +161,45 @@
                      </div>
                  </div>
              </div>
-        </div>
+
+
+             <div class="modal fade none-border" id="map">
+                 <div class="modal-dialog">
+                     <div class="modal-content">
+                         <div class="modal-header">
+                             <h4 class="modal-title">location</h4>
+                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                         </div>
+                         <div class="modal-body">
+                             <div id="googleMap" style="width:100%;height:40%;"></div>
+                         </div>
+
+                     </div>
+                 </div>
+             </div>
+
+         </div>
      <script src="<c:url value="/res/js/userjs.js"/>"></script>
      <script src="<c:url value="/res/js/select2.full.min.js"/>"></script>
      <script src="<c:url value="/res/js/select2.min.js"/>"></script>
      <script>
         $(".select2").select2();
      </script>
+            <script>
+                function myMap() {
+                    var mapProp= {
+                        center:new google.maps.LatLng(41.0166,-91.9682),
+                        zoom:8,
+                    };
+                    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                    var marker=new google.maps.Marker({
+                        position:mapProp.center,
+                    });
 
+                    marker.setMap(map);
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCngMHuO5oW7lMa3sPwEYH7mB5Co0eyMqI&callback=myMap"></script>
     </body>
 </html>
 

@@ -16,7 +16,7 @@
 <p>${errorMsg}</p>
 <div id="loginbox">
     <form id="loginform" class="form-vertical" method="POST" action="/login">
-        <div class="control-group normal_text"> <h3><img src="../../../res/img/logo.png" alt="Logo" /></h3></div>
+        <div class="control-group normal_text"> <h3><img id="loginLogo" src="../../../res/img/logo.png" alt="Logo" /></h3></div>
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">
@@ -32,8 +32,6 @@
             </div>
         </div>
         <div class="form-actions">
-            <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Lost password?</a></span>
-            <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-register">register</a></span>
 
             <span class="pull-right"><input class="btn btn-success"  type="submit" value="Login"></span>
         </div>

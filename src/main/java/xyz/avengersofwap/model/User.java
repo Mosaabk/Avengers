@@ -14,6 +14,7 @@ public class User {
     private String password;
     private String phone;
     private String userId;
+    private String location;
 
 
     private List<String> roles;
@@ -21,6 +22,14 @@ public class User {
 
     public User() {
 
+    }
+
+    public List<Team> getBelongsTeams() {
+        return belongsTeams;
+    }
+
+    public void setBelongsTeams(List<Team> belongsTeams) {
+        this.belongsTeams = belongsTeams;
     }
 
     public User(String userName, String password, String gender, String... roles) {
@@ -35,6 +44,14 @@ public class User {
             }
         }
         this.belongsTeams = new ArrayList<>();
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getUserId() {
