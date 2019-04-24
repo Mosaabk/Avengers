@@ -108,21 +108,22 @@ $(document).ready(function () {
                 window.location.href = "http://localhost:8080/userinfo?userid=" + userId;
             },
             error: function (err) {
-                window.location.href = "http://localhost:8080/userinfo?userid=" + userId;
+                alert(err.toString());
             }
         });
 
     })
 
     $("#submit_btn").click(function () {
+        var rolesvalue = alert($("#roles").val());
         $.ajax({
-            url: "http://localhost:8080/userinfo?",
+            url: "http://localhost:8080/addnewuser?",
             type: "GET",
             data: {
                 name: $("#userName").val(),
                 password: $("#password").val(),
                 uid: $("#uid").val(),
-                roles: $("#roles").val()
+                rolesvalue: rolesvalue
             },
             cache: false,
             dataType: "json",
@@ -130,7 +131,7 @@ $(document).ready(function () {
                 location.reload();
             },
             error: function (err) {
-                console.log(err);
+                alert(err.toString());
             }
         });
 

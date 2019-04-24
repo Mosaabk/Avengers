@@ -8,7 +8,7 @@ $(document).ready(function () {
         // let index = view.attr("data-defaultValue");
         // $("#tr" + index).empty();
         $.ajax({
-            url: "http://localhost:8080/addnewuser?",
+            url: "http://localhost:8080/edituser?",
             type: "GET",
             data: {
                 userid: uid,

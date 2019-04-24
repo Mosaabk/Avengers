@@ -153,7 +153,7 @@
                                  </div>
                                  <div class="border-top">
                                      <div class="card-body">
-                                         <button id="submit_btn" type="button" class="btn btn-primary">Submit</button>
+                                         <button data-dismiss="modal" id="submit_btn" type="button" class="btn btn-primary">Submit</button>
                                      </div>
                                  </div>
                              </form>
