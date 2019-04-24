@@ -76,20 +76,11 @@ public class TeamUtil {
     }
 
     public  static  List<User> getAllUser(){
-        User u1 = new User("a","22-Apr-2019 23:09:15.265 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 [\"ajp-nio-8009\"]\n" +
-                "                             22-Apr-2019 23:09:15.271 信息 [main] org.apache.catalina.startup.Catalina.load 服务器在[456]毫秒内初始化\n" +
-                "                             22-Apr-2019 23:09:15.305 信息 [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]\n" +
-                "                             22-Apr-2019 23:09:15.305 信息 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.19]\n" +
-                "                             22-Apr-2019 23:09:15.320 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄[\"http-nio-8080\"]\n" +
-                "                             22-Apr-2019 23:09:15.332 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄[\"ajp-nio-8009\"]\n" +
-                "                             22-Apr-2019 23:09:15.334 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in [63] milliseconds\n" +
-                "                             Connected to server\n" +
-                "                             [2019-04-22 11:09:15,340] Artifact apache-tomcat-9.0.19: Artifact is being deployed, please wait...\n" +
-                "                             [2019-04-22 11:09:15,340] Artifact Avengers:war: Artifact is being deployed, please wait...\n" +
-                "                             [2019-04-22 11:09:15,645] Artifact apache-tomcat-9.0.19: Artifact is deployed successfully\n" +
-                "                             [2019-04-22 11:09:15,645] Artifact apache-tomcat-9.0.19: Deploy took 305 milliseconds","c","d","d");
-        User u2 = new User("b","e","c","d","d","d","d","zzzy zzy","d","d","d","d","d");
-        User u3 = new User("c","f","h","d","d");
-        return Arrays.asList(u1, u2, u3);
+        User u1 = new User("Allen","123","F","Dev","Admin");
+        User u2 = new User("Bob","123","M","Dev");
+        User u3 = new User("Steve","123","M","Admin");
+        User u4 = new User("Mary","123","F","Dev");
+        User u5 = new User("Jack","123","M","Manager");
+        return Arrays.asList(u1, u2, u3, u4, u5);
     }
 }

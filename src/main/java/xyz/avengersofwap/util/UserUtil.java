@@ -21,7 +21,7 @@ public class UserUtil {
     }
 
     static void initialUserList() {
-        User u1 = new User("Allen", "123", User.GENDER_MALE, "Developer");
+        User u1 = new User("Allen", "123", User.GENDER_FEMALE, "Developer");
         Team t1 = TeamUtil.teamWithId(1);
         u1.addToTeam(t1);
         User u2 = new User("Bob", "123", User.GENDER_MALE, "Developer");
@@ -30,7 +30,7 @@ public class UserUtil {
         User u3 = new User("Steve", "123", User.GENDER_MALE, "Developer");
         Team t3 = TeamUtil.teamWithId(3);
         u1.addToTeam(t3);
-        User u4 = new User("Mary", "123", User.GENDER_MALE, "Developer");
+        User u4 = new User("Mary", "123", User.GENDER_FEMALE, "Developer");
         User u5 = new User("Jack", "123", User.GENDER_MALE, "Developer");
         userList = Arrays.asList(u1, u2, u3, u4, u5);
     }
