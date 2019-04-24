@@ -55,28 +55,46 @@
                 <div class="card-body">
                     <h4 class="card-title">User Edit</h4>
                     <div class="form-group row col-md-6">
-                        <label for="tname" class="col-sm-3 text-right control-label col-form-label">name</label>
+                        <label for="uid" class="col-sm-3 text-right control-label col-form-label">user id</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="tname" placeholder="Team Name Here">
+                            <input  type="text" class="form-control" id="uid" placeholder="user id">
                         </div>
                     </div>
                     <div class="form-group row col-md-6">
-                        <label for="tdesc" class="col-sm-3 text-right control-label col-form-label">password</label>
+                        <label for="tname" class="col-sm-3 text-right control-label col-form-label">name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="tdesc" placeholder="Team Description Here">
+                            <input  type="text" class="form-control" id="tname" placeholder=" Name Here">
+                        </div>
+                    </div>
+                    <div class="form-group row col-md-6">
+                        <label for="pwd" class="col-sm-3 text-right control-label col-form-label">password</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="pwd" placeholder="password Here">
+                        </div>
+                    </div>
+                    <div class="form-group row col-md-6">
+                        <label for="location" class="col-sm-3 text-right control-label col-form-label">address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="location" placeholder="address Here">
                         </div>
                     </div>
                     <div class="form-group row col-md-6">
                         <label class="col-sm-3 text-right control-label col-form-label">roles</label>
                         <div class="col-md-9">
-                            <select class="select2 form-control m-t-15" multiple="multiple" style="height: 36px;width: 100%;">
-
+                            <select class="select2 form-control m-t-15" multiple="multiple"  id="roles" style="height: 36px;width: 100%;">
+                                <optgroup label="all group">
+                                <option>group1</option>
+                                <option>group2</option>
+                                <option>group3</option>
+                                <option>group4</option>
+                                <option>group5</option>
+                                </optgroup>
                             </select>
                         </div>
                     </div>
                     <div class="border-top">
                         <div class="card-body">
-                            <button type="button" class="btn btn-primary">Submit</button>
+                            <button id="submit_btn" type="button" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -95,6 +113,8 @@
 <script src="<c:url value="/res/dist/js/custom.min.js" />"></script>
 <script src="<c:url value="/res/libs/select2/dist/js/select2.full.min.js" /> "></script>
 <script src="<c:url value="/res/libs/select2/dist/js/select2.min.js" /> "></script>
+<script src="<c:url value="/res/js/submit.js"/>"></script>
+
 <script>
     $(".select2").select2();
 </script>

@@ -15,7 +15,15 @@ public class User {
     private String phone;
     private String userId;
     private String location;
+    private String address;
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     private List<String> roles;
     private List<Team> belongsTeams;
