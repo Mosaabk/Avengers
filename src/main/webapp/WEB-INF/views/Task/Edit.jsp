@@ -19,7 +19,7 @@
             <div class="card-body">
                 <h5 class="card-title">Edit Task</h5>
                 <div class="table-responsive">
-                    <form>
+                    <form method="post"
                         <% if(task.id() == 0) { %>
                             <input type="hidden" name="r" value="add" />
                         <% } else { %>
