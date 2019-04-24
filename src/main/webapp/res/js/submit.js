@@ -4,11 +4,11 @@ $(document).ready(function () {
         let pwd = $("#pwd").val();
         let Location = $("#location").val();
         let roles = $("#roles").val();
-       let  uid = $("#uid").val();
+        let  uid = $("#uid").val();
         // let index = view.attr("data-defaultValue");
         // $("#tr" + index).empty();
         $.ajax({
-            url: "http://localhost:8080/edituser?",
+            url: "/edituser?",
             type: "GET",
             data: {
                 userid: uid,
@@ -20,7 +20,7 @@ $(document).ready(function () {
             cache: false,
             dataType: "json",
             success: function (data) {
-                 window.location.href="http://localhost:8080/user";
+                 window.location.href="/user";
             },
             error: function (err) {
                      alert("success");
