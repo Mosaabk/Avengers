@@ -74,7 +74,7 @@ public class TeamUtil {
             }
         }
     }
-        
+
     public  static  List<User> getAllUser(){
         User u1 = new User("a","22-Apr-2019 23:09:15.265 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 [\"ajp-nio-8009\"]\n" +
                 "                             22-Apr-2019 23:09:15.271 信息 [main] org.apache.catalina.startup.Catalina.load 服务器在[456]毫秒内初始化\n" +

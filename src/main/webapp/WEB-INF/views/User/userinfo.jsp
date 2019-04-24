@@ -1,5 +1,7 @@
 <%@ page import="xyz.avengersofwap.util.TeamUtil" %>
 <%@ page import="xyz.avengersofwap.model.Team" %>
+<%@ page import="xyz.avengersofwap.model.User" %>
+<%@ page import="xyz.avengersofwap.util.UserUtil" %>
 <%--
   Created by IntelliJ IDEA.
   User: 凯
@@ -22,16 +24,24 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 </head>
 
-<%! int teamId = -1;
-    Team team = null;
+<%!
+    String userId = "";
+    User user = null;
 %>
 
 <%
-    String param = request.getParameter("teamId");
-    if (!param.isEmpty()) {
-        teamId = Integer.valueOf(param);
-        team = TeamUtil.teamWithId(teamId);
+    String param = "";
+    try {
+        param = request.getParameter("userId");
+        if (!param.isEmpty()) {
+            userId = param;
+//            team = TeamUtil.teamWithId(teamId);
+        }
     }
+    catch (Exception e){
+        userId = "";
+    }
+
 %>
 
 <body>
@@ -43,7 +53,7 @@
         <div class="card">
             <form class="form-horizontal">
                 <div class="card-body">
-                    <h4 class="card-title">Teams</h4>
+                    <h4 class="card-title">User Edit</h4>
                     <div class="form-group row col-md-6">
                         <label for="tname" class="col-sm-3 text-right control-label col-form-label">name</label>
                         <div class="col-sm-9">
@@ -60,8 +70,7 @@
                         <label class="col-sm-3 text-right control-label col-form-label">roles</label>
                         <div class="col-md-9">
                             <select class="select2 form-control m-t-15" multiple="multiple" style="height: 36px;width: 100%;">
-                                <option value="Ali">Ali</option>
-                                <option value="Bob">Bob</option>
+
                             </select>
                         </div>
                     </div>
