@@ -27,53 +27,50 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 </head>
 
-<%! int teamId = -1;
-    Team team = null;
-    List<User> userList = UserUtil.getAllUsers();
-    List<TeamMember> members = new ArrayList<>();
-%>
+<%--<%! int teamId = -1;--%>
+<%--    Team team = null;--%>
+<%--    List<User> userList = UserUtil.getAllUsers();--%>
+<%--    List<TeamMember> members = new ArrayList<>();--%>
+<%--%>--%>
 
-<%
-    String param = "";
-    try {
-        param = request.getParameter("teamId");
+<%--<%--%>
+<%--    String param = "";--%>
+<%--    try {--%>
+<%--        param = request.getParameter("teamId");--%>
 
-        if (param != null && !param.isEmpty() && param != "-1") {
-            System.out.println("parameter:" + param);
-            teamId = Integer.valueOf(param);
-            team = TeamUtil.teamWithId(teamId);
+<%--        if (param != null && !param.isEmpty() && param != "-1") {--%>
+<%--            System.out.println("parameter:" + param);--%>
+<%--            teamId = Integer.valueOf(param);--%>
+<%--            team = TeamUtil.teamWithId(teamId);--%>
+<%--            if (team != null) {--%>
+<%--                request.setAttribute("teamName", team.getName());--%>
+<%--                request.setAttribute("teamDesc", team.getDescription());--%>
+<%--            }--%>
+<%--        } else {--%>
+<%--            param = "";--%>
+<%--        }--%>
+<%--        System.out.println("team id:"+teamId);--%>
+<%--        System.out.println("Users: "+userList.size());--%>
+<%--        System.out.println("Members: "+team.getMembers().size());--%>
+<%--    } catch (Exception e) {--%>
 
-        } else {
-            param = "";
-            team = TeamUtil.createNewTeam("");
-            teamId = team.getId();
-        }
-        System.out.println("team id:"+teamId);
-        System.out.println("Users: "+userList.size());
-        System.out.println("Members: "+team.getMembers().size());
-    } catch (Exception e) {
-
-        System.out.println("exception:" + e.getLocalizedMessage());
-        response.getWriter().write(e.getMessage());
-    } finally {
-        if(team != null) {
-            for (User u : userList) {
-                System.out.println("user name: " + u.getUserName());
-                TeamMember mem = new TeamMember(u);
-                if (!param.isEmpty())
-                    mem.setTeamMember(team.isMemberExist(u.getUserName()));
-                members.add(mem);
-            }
-        }
-        else{
-            team = TeamUtil.createNewTeam("");
-        }
-        session.setAttribute("teamId", teamId);
-        session.setAttribute("teamName", team.getName());
-        session.setAttribute("teamDesc", team.getDescription());
-        session.setAttribute("memberList", members);
-    }
-%>
+<%--        System.out.println("exception:" + e.getLocalizedMessage());--%>
+<%--        response.getWriter().write(e.getMessage());--%>
+<%--    } finally {--%>
+<%--        if(team != null) {--%>
+<%--            for (User u : userList) {--%>
+<%--                System.out.println("user name: " + u.getUserName());--%>
+<%--                TeamMember mem = new TeamMember(u);--%>
+<%--                if (!param.isEmpty()) {--%>
+<%--                    mem.setTeamMember(team.isMemberExist(u.getUserName()));--%>
+<%--                }--%>
+<%--                members.add(mem);--%>
+<%--            }--%>
+<%--        }--%>
+<%--        session.setAttribute("teamId", teamId);--%>
+<%--        request.setAttribute("memberList", members);--%>
+<%--    }--%>
+<%--%>--%>
 
 <body>
 <div id="main-wrapper">
@@ -88,13 +85,13 @@
                     <div class="form-group row col-md-6">
                         <label for="tname" class="col-sm-3 text-right control-label col-form-label">Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="tname" value="<%=team.getName()%>" placeholder="Team Name Here">
+                            <input type="text" class="form-control" id="tname" value="${teamName}" placeholder="Team Name Here">
                         </div>
                     </div>
                     <div class="form-group row col-md-6">
                         <label for="tdesc" class="col-sm-3 text-right control-label col-form-label">Description</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="tdesc" value="<%=team.getDescription()%>" placeholder="Team Description Here">
+                            <input type="text" class="form-control" id="tdesc" value="${teamDesc}" placeholder="Team Description Here">
                         </div>
                     </div>
                     <div class="form-group row col-md-6">
@@ -142,8 +139,8 @@
         $.each($(".select2 option:selected"), function(){
             members.push($(this).val());
         });
-        const teamId = sessionStorage.getItem("teamId");
-        console.log("session.teamId: "+teamId);
+        // const teamId = sessionStorage.getItem("teamId");
+        // console.log("session.teamId: "+teamId);
         const tid = $('#submitBtn').attr('data-defaultValue');
         console.log("data-value: " + tid);
         const postData = {
