@@ -26,11 +26,13 @@ public class UpdateTeamServlet extends HttpServlet {
 
         if (teamId == null || Integer.valueOf(teamId) < 1) {
             // Create New Team
+            System.out.println("servlet create new team");
             Team team = TeamUtil.createNewTeam(name);
             team.setDescription(description);
 
         } else {
             // Update Team info
+            System.out.println("servlet update team info");
             Team team = TeamUtil.teamWithId(Integer.valueOf(teamId));
             team.setName(name);
             team.setDescription(description);
