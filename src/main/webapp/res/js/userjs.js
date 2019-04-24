@@ -12,16 +12,11 @@ $(document).ready(function () {
     })
 
 
-    $("#locala").
-
-
     $(".deletebtn").click(function () {
         const view = $(this);
         let userID = view.attr("data-value");
-        let index = view.attr("data-defaultValue");
-        $("#tr" + index).empty();
-
-
+        // let index = view.attr("data-defaultValue");
+        // $("#tr" + index).empty();
         $.ajax({
             url: "http://localhost:8080/delete?",
             type: "GET",
@@ -31,11 +26,11 @@ $(document).ready(function () {
             cache: false,
             dataType: "json",
             success: function (data) {
-                location.reload();
+                refresh();
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             },
             error: function (err) {
-                alert(err.toString());
+                alert(err);
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             }
         });
@@ -58,7 +53,7 @@ $(document).ready(function () {
             cache: false,
             dataType: "json",
             success: function (data) {
-                location.reload();
+                refresh();
                 // window.location.href="http://localhost:8080/delete?userid="+userid;
             },
             error: function (err) {
@@ -83,7 +78,7 @@ $(document).ready(function () {
             cache: false,
             dataType: "json",
             success: function (data) {
-                location.reload();
+                refresh();
                 userId = "";
                 //  $("#td"+index).append(" <button id=\"td_role${index.index}\" data-defaultValue=\"${index.index}\" data-value=\"${role}\" type=\"button\" class=\"btn btn-outline-primary role_btn\">+c+</button>")
             },
@@ -110,7 +105,6 @@ $(document).ready(function () {
             cache: false,
             dataType: "json",
             success: function (data) {
-                alert("11111");
                 window.location.href = "http://localhost:8080/userinfo?userid=" + userId;
             },
             error: function (err) {
@@ -144,4 +138,30 @@ $(document).ready(function () {
 
 
 });
+
+
+function refresh(){
+    $("#submit_btn").click(function () {
+        $.ajax({
+            url: "http://localhost:8080/user",
+            type: "GET",
+            data: {
+                name: $("#userName").val(),
+                password: $("#password").val(),
+                uid: $("#uid").val(),
+                roles: $("#roles").val()
+            },
+            cache: false,
+            dataType: "json",
+            success: function (data) {
+                location.reload();
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+
+    });
+
+}
 
